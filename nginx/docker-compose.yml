@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    web:
+        image: nginx:latest
+        container_name: ${NGINX_NAME}
+        ports:
+            - "${NGINX_PORT}:80"
+        volumes:
+            - ./app:/var/www
+            - ./etc/nginx/:/etc/nginx/conf.d/
